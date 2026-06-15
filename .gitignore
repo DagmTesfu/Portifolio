@@ -1,3 +1,17 @@
-.vercel
+# Vercel
+.vercel/
+
+# OS files
 .DS_Store
 Thumbs.db
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Dependencies
+node_modules/
