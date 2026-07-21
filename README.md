@@ -22,4 +22,4 @@ Vercel serves `index.html` directly. No build step or environment variables are 
 
 ## Before sharing publicly
 
-Replace the remaining `data-placeholder="true"` LinkedIn contact link in `index.html` with the final profile URL.
+Replace the remaining `data-placeholder="true"` LinkedIn link in `index.html` when the final profile URL is available.
