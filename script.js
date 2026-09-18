@@ -38,7 +38,11 @@ function setupNavigation() {
     if (event.key === "Escape") closeMenu();
   });
 
-  const updateHeader = () => header.classList.toggle("scrolled", window.scrollY > 20);
+  const updateHeader = () => {
+    const scrolled = window.scrollY > 20;
+    header.classList.toggle("scrolled", scrolled);
+  };
+
   window.addEventListener("scroll", updateHeader, { passive: true });
   updateHeader();
 }
@@ -63,23 +67,43 @@ function setupReveal(reducedMotion) {
 }
 
 function setupActiveNavigation() {
-  if (!("IntersectionObserver" in window)) return;
-
   const links = [...document.querySelectorAll(".site-navigation a[href^='#']")];
   const sections = links
     .map((link) => document.querySelector(link.getAttribute("href")))
     .filter(Boolean);
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      links.forEach((link) => {
-        link.classList.toggle("active", link.getAttribute("href") === `#${entry.target.id}`);
-      });
-    });
-  }, { rootMargin: "-35% 0px -55%", threshold: 0 });
+  if (sections.length === 0) return;
 
-  sections.forEach((section) => observer.observe(section));
+  let rafId = null;
+
+  const updateActive = () => {
+    const scrollMid = window.scrollY + window.innerHeight * 0.38;
+    let activeSection = sections[0];
+
+    for (const section of sections) {
+      if (section.offsetTop <= scrollMid) {
+        activeSection = section;
+      }
+    }
+
+    links.forEach((link) => {
+      const isActive = link.getAttribute("href") === `#${activeSection.id}`;
+      if (link.classList.contains("active") !== isActive) {
+        link.classList.toggle("active", isActive);
+      }
+    });
+  };
+
+  const onScroll = () => {
+    if (rafId) return;
+    rafId = requestAnimationFrame(() => {
+      updateActive();
+      rafId = null;
+    });
+  };
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  updateActive();
 }
 
 function setupContactForm() {

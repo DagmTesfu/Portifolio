@@ -125,7 +125,7 @@ button {
 .site-navigation a {
   color: var(--muted);
   font-size: 0.82rem;
-  transition: color 160ms ease;
+  transition: color 240ms ease;
 }
 
 .site-navigation a:hover,
@@ -569,8 +569,10 @@ button {
 
 /* Contact */
 .contact {
-  background: var(--text);
-  color: var(--background);
+  position: relative;
+  background: #1a1916;
+  color: var(--text);
+  border-top: 2px solid var(--accent);
 }
 
 .contact-layout {
@@ -581,7 +583,11 @@ button {
 
 .contact .section-label {
   margin-bottom: 60px;
-  color: #69665f;
+  color: var(--faint);
+}
+
+.contact .section-label span {
+  color: var(--accent);
 }
 
 .contact-intro h2 {
@@ -594,7 +600,7 @@ button {
 .contact-intro > p {
   max-width: 490px;
   margin-top: 30px;
-  color: #5f5c55;
+  color: var(--muted);
 }
 
 .direct-links {
@@ -606,9 +612,10 @@ button {
 
 .direct-links a {
   padding-bottom: 3px;
-  border-bottom: 1px solid #969188;
+  border-bottom: 1px solid var(--line-strong);
   font-family: var(--mono);
   font-size: 0.72rem;
+  color: var(--muted);
   transition: border-color 160ms ease, color 160ms ease;
 }
 
@@ -620,7 +627,7 @@ button {
 
 .contact-form {
   align-self: end;
-  border-top: 1px solid #a7a299;
+  border-top: 1px solid var(--line-strong);
 }
 
 .field-row {
@@ -629,12 +636,12 @@ button {
   align-items: start;
   gap: 24px;
   padding-block: 20px;
-  border-bottom: 1px solid #c3bfb5;
+  border-bottom: 1px solid var(--line);
 }
 
 .field-row label {
   padding-top: 8px;
-  color: #69665f;
+  color: var(--faint);
   font-family: var(--mono);
   font-size: 0.68rem;
   text-transform: uppercase;
@@ -646,7 +653,7 @@ button {
   border: 0;
   outline: 0;
   background: transparent;
-  color: var(--background);
+  color: var(--text);
   font-size: 1rem;
 }
 
@@ -661,7 +668,7 @@ button {
 }
 
 .field-row:focus-within {
-  border-color: var(--background);
+  border-color: var(--line-strong);
 }
 
 .submit-button {
@@ -672,21 +679,21 @@ button {
   min-height: 58px;
   margin-top: 18px;
   padding: 0 18px;
-  background: var(--background);
+  background: var(--accent);
   color: var(--text);
   cursor: pointer;
-  transition: background 160ms ease;
+  transition: background 160ms ease, opacity 160ms ease;
 }
 
 .submit-button i {
-  color: var(--accent);
+  color: var(--text);
   font-family: var(--mono);
   font-style: normal;
 }
 
 .submit-button:hover,
 .submit-button:focus-visible {
-  background: #292824;
+  background: #cf5439;
 }
 
 .submit-button:disabled {
@@ -697,12 +704,12 @@ button {
 .form-status {
   min-height: 24px;
   margin-top: 12px;
-  color: #336744;
+  color: #5aad72;
   font-size: 0.76rem;
 }
 
 .form-status.error {
-  color: #a13d2b;
+  color: #e46043;
 }
 
 /* Footer */
