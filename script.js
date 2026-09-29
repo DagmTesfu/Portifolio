@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupNavigation();
   setupReveal(reducedMotion);
   setupActiveNavigation();
+  setupProjectSliders();
   setupContactForm();
   setupPlaceholderLinks();
 
@@ -145,3 +146,74 @@ function setupPlaceholderLinks() {
     link.addEventListener("click", (event) => event.preventDefault());
   });
 }
+
+function setupProjectSliders() {
+  const sliders = document.querySelectorAll(".project-slider");
+
+  sliders.forEach((slider) => {
+    const slides = slider.querySelectorAll(".slider-slide");
+    const prevBtn = slider.querySelector(".slider-prev");
+    const nextBtn = slider.querySelector(".slider-next");
+    const indicators = slider.querySelectorAll(".slider-indicators .indicator");
+    const captionTitle = slider.querySelector(".caption-title");
+    const captionSub = slider.querySelector(".caption-sub");
+
+    if (slides.length <= 1) return;
+
+    let currentIndex = 0;
+
+    const showSlide = (index) => {
+      currentIndex = (index + slides.length) % slides.length;
+
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === currentIndex);
+      });
+
+      indicators.forEach((ind, i) => {
+        ind.classList.toggle("active", i === currentIndex);
+      });
+
+      const currentSlide = slides[currentIndex];
+      if (captionTitle && currentSlide.dataset.caption) {
+        captionTitle.textContent = currentSlide.dataset.caption;
+      }
+      if (captionSub && currentSlide.dataset.sub) {
+        captionSub.textContent = currentSlide.dataset.sub;
+      }
+    };
+
+    if (prevBtn) {
+      prevBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        showSlide(currentIndex - 1);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        showSlide(currentIndex + 1);
+      });
+    }
+
+    indicators.forEach((indicator, i) => {
+      indicator.addEventListener("click", () => showSlide(i));
+    });
+
+    // Touch swipe support for mobile
+    let touchStartX = 0;
+    slider.addEventListener("touchstart", (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    slider.addEventListener("touchend", (e) => {
+      const touchEndX = e.changedTouches[0].screenX;
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 36) {
+        if (diff > 0) showSlide(currentIndex + 1);
+        else showSlide(currentIndex - 1);
+      }
+    }, { passive: true });
+  });
+}
+

@@ -29,7 +29,7 @@
       <a href="#about">About</a>
       <a href="#work">Work</a>
       <a href="#contact">Contact</a>
-      <a href="Dagmawi_Tesfu_Resume.pdf" download>Resume</a>
+      <a href="assets/Dagmawi_Tesfu_Temesgen_CV_Updated.pdf" target="_blank" rel="noreferrer" download="Dagmawi_Tesfu_Resume.pdf">Resume</a>
     </nav>
   </header>
 
@@ -88,31 +88,76 @@
         </div>
 
         <div class="project-list">
-          <article class="project reveal">
+          <article class="project project-featured reveal">
             <div class="project-index">01</div>
             <div class="project-heading">
-              <p class="project-type">Business automation</p>
-              <h2>Telegram Shop Assistant</h2>
+              <p class="project-type">AI &amp; Consumer Utility</p>
+              <h2>TabSplit</h2>
             </div>
-            <figure class="project-visual">
-              <img src="assets/projects/telegram-shop-assistant.webp" alt="Interface concept showing a business messaging inbox, product catalog, FAQs, and lead controls" width="1536" height="1024" loading="eager" fetchpriority="high" decoding="async">
-              <figcaption><span>Operations dashboard</span><span>Inbox / Catalog / Leads</span></figcaption>
-            </figure>
+            <div class="project-slider" data-slider="tabsplit" aria-label="TabSplit application screenshots">
+              <div class="slider-track">
+                <div class="slider-slide active" data-caption="01 / Snap" data-sub="Landing &amp; How It Works">
+                  <img src="assets/projects/tabsplit/01-home.png" alt="TabSplit Home screen showing Split the bill, not the friendship tagline and how it works breakdown" width="501" height="1024" loading="eager" fetchpriority="high" decoding="async">
+                </div>
+                <div class="slider-slide" data-caption="02 / Upload" data-sub="Camera &amp; Gallery Receipt Scan">
+                  <img src="assets/projects/tabsplit/02-scan.png" alt="TabSplit Scan Receipt screen showing currency picker and photo upload options" width="502" height="1024" loading="lazy" decoding="async">
+                </div>
+                <div class="slider-slide" data-caption="03 / Review" data-sub="Gemini Vision Item Extraction">
+                  <img src="assets/projects/tabsplit/03-review.png" alt="TabSplit Review Receipt screen showing extracted items and prices from Punjab Restaurant" width="557" height="1024" loading="lazy" decoding="async">
+                </div>
+                <div class="slider-slide" data-caption="04 / People" data-sub="Group Member Assignment">
+                  <img src="assets/projects/tabsplit/04-people.png" alt="TabSplit People screen showing Biruck and Bemnet assigned to split the bill" width="495" height="1024" loading="lazy" decoding="async">
+                </div>
+                <div class="slider-slide" data-caption="05 / Summary" data-sub="Deterministic Per-Person Totals">
+                  <img src="assets/projects/tabsplit/05-summary.png" alt="TabSplit Bill Summary screen showing calculated item shares, taxes, and swipe to finalize" width="496" height="1024" loading="lazy" decoding="async">
+                </div>
+              </div>
+              <div class="slider-controls">
+                <button class="slider-btn slider-prev" type="button" aria-label="Previous screenshot">←</button>
+                <div class="slider-indicators">
+                  <button class="indicator active" type="button" aria-label="Slide 1"></button>
+                  <button class="indicator" type="button" aria-label="Slide 2"></button>
+                  <button class="indicator" type="button" aria-label="Slide 3"></button>
+                  <button class="indicator" type="button" aria-label="Slide 4"></button>
+                  <button class="indicator" type="button" aria-label="Slide 5"></button>
+                </div>
+                <button class="slider-btn slider-next" type="button" aria-label="Next screenshot">→</button>
+              </div>
+              <figcaption class="slider-caption">
+                <span class="caption-title">01 / Snap</span>
+                <span class="caption-sub">Landing &amp; How It Works</span>
+              </figcaption>
+            </div>
             <div class="project-body">
-              <p class="project-summary">A Telegram-based workspace that helps small businesses answer customer questions, organize product information, and turn conversations into leads and orders.</p>
+              <p class="project-summary">Split the bill. Not the friendship. A mobile-first receipt splitting web application that uses Google Gemini Vision to extract items and prices from restaurant receipts, allows human verification, and calculates exact per-person shares with integer minor-unit math.</p>
               <div class="project-notes">
                 <div>
-                  <h3>What it handles</h3>
+                  <h3>Engineering highlights</h3>
                   <ul>
-                    <li>Business accounts and multiple operators</li>
-                    <li>Product and FAQ management</li>
-                    <li>Conversation, lead, and order storage</li>
-                    <li>Bot automation with human takeover</li>
+                    <li>Client-side compression (up to 20MB phone photos optimized under 5MB)</li>
+                    <li>Gemini Vision server-side integration keeping API keys secure</li>
+                    <li>Deterministic integer minor-unit arithmetic with largest-remainder rounding</li>
+                    <li>Unique shareable bill links for guest access without account creation</li>
+                    <li>Server-side recalculation, rate limiting &amp; Supabase Row Level Security</li>
                   </ul>
                 </div>
                 <div>
-                  <h3>Built with</h3>
-                  <div class="tag-list"><span>Node.js</span><span>Express</span><span>Supabase</span><span>Telegram API</span></div>
+                  <h3>Architecture &amp; Stack</h3>
+                  <p>AI reads → Human confirms → Server calculates → Database stores the truth.</p>
+                  <div class="tag-list" style="margin-top: 14px;">
+                    <span>React</span>
+                    <span>Vite</span>
+                    <span>Node.js</span>
+                    <span>Express</span>
+                    <span>Gemini Vision</span>
+                    <span>Supabase</span>
+                    <span>PostgreSQL</span>
+                    <span>Tailwind CSS</span>
+                  </div>
+                  <div class="project-actions">
+                    <a class="project-link project-link-primary" href="https://tab-split-lime.vercel.app/" target="_blank" rel="noreferrer">Live Demo <i aria-hidden="true">↗</i></a>
+                    <a class="project-link" href="https://github.com/DagmTesfu/TabSplit" target="_blank" rel="noreferrer">GitHub <i aria-hidden="true">↗</i></a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -121,92 +166,7 @@
           <article class="project reveal">
             <div class="project-index">02</div>
             <div class="project-heading">
-              <p class="project-type">Marketplace</p>
-              <h2>Event Venue Marketplace</h2>
-            </div>
-            <figure class="project-visual">
-              <img src="assets/projects/event-venue-marketplace.webp" alt="Interface concept showing venue photography, search filters, a map, and event space listings" width="1536" height="1024" loading="eager" decoding="async">
-              <figcaption><span>Discovery experience</span><span>Search / Map / Listings</span></figcaption>
-            </figure>
-            <div class="project-body">
-              <p class="project-summary">A venue discovery and listing platform for Ethiopia. Visitors can browse spaces while venue owners and administrators manage listing content and images.</p>
-              <div class="project-notes">
-                <div>
-                  <h3>What it handles</h3>
-                  <ul>
-                    <li>Venue listings and image storage</li>
-                    <li>Authentication and protected pages</li>
-                    <li>Administrative listing workflow</li>
-                    <li>Production deployment and abuse protection</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3>Built with</h3>
-                  <div class="tag-list"><span>Next.js</span><span>React</span><span>Supabase</span><span>Vercel</span><span>Turnstile</span></div>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="project project-featured reveal">
-            <div class="project-index">03</div>
-            <div class="project-heading">
-              <p class="project-type">Sales and engagement</p>
-              <h2>Sales &amp; Lottery Platform</h2>
-            </div>
-            <figure class="project-visual">
-              <img src="assets/projects/sales-lottery-platform.webp" alt="Interface concept showing product sales, promotional entries, purchase progress, and confirmation states" width="1536" height="1024" loading="lazy" decoding="async">
-              <figcaption><span>Customer journey</span><span>Shop / Enter / Confirm</span></figcaption>
-            </figure>
-            <div class="project-body">
-              <p class="project-summary">A customer-facing web application that combines product sales with a lottery-based promotional experience in one clear, mobile-friendly flow.</p>
-              <div class="project-notes">
-                <div>
-                  <h3>Project focus</h3>
-                  <p>Presenting products clearly, making participation easy to understand, and keeping the experience straightforward across different screen sizes.</p>
-                </div>
-                <div>
-                  <h3>Role</h3>
-                  <p>Application design and full-stack development.</p>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="project reveal">
-            <div class="project-index">04</div>
-            <div class="project-heading">
-              <p class="project-type">Consumer utility</p>
-              <h2>TabSplit</h2>
-            </div>
-            <figure class="project-visual">
-              <img src="assets/projects/tabsplit.webp" alt="Interface showing a scanned Ethiopian restaurant receipt, item assignment to group members, and per-person totals in ETB" width="1536" height="1024" loading="lazy" decoding="async">
-              <figcaption><span>Scan / Assign / Split</span><span>Receipt → Share</span></figcaption>
-            </figure>
-            <div class="project-body">
-              <p class="project-summary">Photograph a restaurant receipt, assign each item to the person who ordered it, and get everyone's share calculated instantly — built for group meals at Ethiopian restaurants.</p>
-              <div class="project-notes">
-                <div>
-                  <h3>What it handles</h3>
-                  <ul>
-                    <li>Camera or photo upload with AI item extraction</li>
-                    <li>Drag-and-assign interface per person</li>
-                    <li>Automatic per-person total and tax split</li>
-                    <li>Telegram / WhatsApp-ready payment summary</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3>Built with</h3>
-                  <div class="tag-list"><span>React</span><span>AI Vision</span><span>localStorage</span></div>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="project reveal">
-            <div class="project-index">05</div>
-            <div class="project-heading">
-              <p class="project-type">Developer tooling</p>
+              <p class="project-type">Developer tooling <span class="status-pill">Building</span></p>
               <h2>AccessPilot</h2>
             </div>
             <figure class="project-visual">
@@ -214,7 +174,7 @@
               <figcaption><span>Engineering workflow</span><span>Scan / Fix / Verify</span></figcaption>
             </figure>
             <div class="project-body">
-              <p class="project-summary">An AI-powered accessibility engineering platform that scans websites and repositories for WCAG 2.2 violations, traces findings to their source code, generates grounded code fixes, applies patches deterministically, and verifies the fix resolved the issue.</p>
+              <p class="project-summary">An AI-powered accessibility engineering platform currently under active development. Scans websites and repositories for WCAG 2.2 violations, traces findings to their source code, generates grounded code fixes, applies patches deterministically, and verifies the fix resolved the issue.</p>
               <div class="project-notes">
                 <div>
                   <h3>What it handles</h3>
@@ -229,6 +189,38 @@
                 <div>
                   <h3>Built with</h3>
                   <div class="tag-list"><span>Node.js</span><span>axe-core</span><span>AI</span><span>Docker</span><span>REST API</span></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-index">03</div>
+            <div class="project-heading">
+              <p class="project-type">Client Project · Operations</p>
+              <h2>Sales Operations &amp; Custom Lottery Platform</h2>
+            </div>
+            <figure class="project-visual-mobile">
+              <img src="assets/projects/zebo-sales-lottery.png" alt="Secure login interface for Zebo Cookies Bazaar operations and Mega Giveaway Draw system" width="565" height="1024" loading="lazy" decoding="async">
+              <figcaption><span>Bazaar operations portal</span><span>Telegram sales &amp; Admin approval</span></figcaption>
+            </figure>
+            <div class="project-body">
+              <p class="project-summary">A private business operations platform custom-built for Zebo Cookies. Combines a Telegram-based daily sales interface for field representatives with a secure administrative financial approval portal and custom promotional lottery engine.</p>
+              <div class="project-notes">
+                <div>
+                  <h3>What it handles</h3>
+                  <ul>
+                    <li>Telegram sales logging: Field reps record daily sales directly in Telegram</li>
+                    <li>Admin financial approvals: Managers review, reconcile, and approve daily collected money</li>
+                    <li>Custom promotional lottery: Algorithmic draw system tailored for marketing campaigns</li>
+                    <li>Role-based access: Secure auth protecting proprietary enterprise data</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Project Context</h3>
+                  <p>Built for private client operations — internal dashboard data protected under NDA.</p>
+                  <h3 style="margin-top: 16px;">Built with</h3>
+                  <div class="tag-list"><span>Node.js</span><span>Express</span><span>PostgreSQL</span><span>Supabase</span><span>Telegram Bot API</span><span>React</span></div>
                 </div>
               </div>
             </div>
@@ -282,7 +274,7 @@
           <div class="direct-links">
             <a href="mailto:tesfudagmtt@gmail.com">Email</a>
             <a href="https://github.com/DagmTesfu" target="_blank" rel="noreferrer">GitHub</a>
-            <a class="pending" href="#contact" data-placeholder="true" aria-disabled="true">LinkedIn soon</a>
+            <a href="https://www.linkedin.com/in/dagmawi-tesfu-3a7644419" target="_blank" rel="noreferrer">LinkedIn</a>
           </div>
         </div>
 
@@ -309,7 +301,6 @@
 
   <footer class="site-footer page-shell">
     <p>Dagmawi Tesfu <span id="current-year">2026</span></p>
-    
     <a href="#top">Back to top</a>
   </footer>
 

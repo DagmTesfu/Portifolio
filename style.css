@@ -472,6 +472,279 @@ button {
   font-size: 0.61rem;
 }
 
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border: 1px solid var(--line-strong);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  transition: border-color 160ms ease, background 160ms ease, color 160ms ease;
+}
+
+.project-link i {
+  font-style: normal;
+  color: var(--accent);
+  transition: transform 160ms ease;
+}
+
+.project-link:hover,
+.project-link:focus-visible {
+  border-color: var(--accent);
+  background: rgba(228, 96, 67, 0.08);
+  color: var(--accent);
+}
+
+.project-link:hover i,
+.project-link:focus-visible i {
+  transform: translate(2px, -2px);
+}
+
+.project-link-primary {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--text);
+}
+
+.project-link-primary i {
+  color: var(--text);
+}
+
+.project-link-primary:hover,
+.project-link-primary:focus-visible {
+  border-color: #cf5439;
+  background: #cf5439;
+  color: var(--text);
+}
+
+/* Project Slider */
+.project-slider {
+  position: relative;
+  grid-column: 2;
+  margin-top: 12px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: radial-gradient(circle at center, #1e1e1a 0%, #11110f 100%);
+  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 24px 56px;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.96);
+  transition: opacity 300ms ease, transform 300ms ease, visibility 300ms;
+  pointer-events: none;
+}
+
+.slider-slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+.slider-slide img {
+  max-height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.slider-controls {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(17, 17, 15, 0.86);
+  padding: 4px 8px;
+  border: 1px solid var(--line);
+  backdrop-filter: blur(10px);
+}
+
+.slider-btn {
+  background: transparent;
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: color 150ms ease, background 150ms ease;
+  border: 1px solid transparent;
+}
+
+.slider-btn:hover,
+.slider-btn:focus-visible {
+  color: var(--accent);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--line);
+}
+
+.slider-indicators {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 4px;
+}
+
+.slider-indicators .indicator {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--faint);
+  transition: background 200ms ease, transform 200ms ease;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+}
+
+.slider-indicators .indicator.active {
+  background: var(--accent);
+  transform: scale(1.35);
+}
+
+.slider-caption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 4;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 12px 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(17, 17, 15, 0.88);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 0.61rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+}
+
+.slider-step-badge {
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  margin-right: 6px;
+}
+
+/* Status Pill for In Development */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 7px;
+  margin-left: 8px;
+  border: 1px solid rgba(228, 96, 67, 0.4);
+  background: rgba(228, 96, 67, 0.1);
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+.status-pill::before {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  content: "";
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.8); }
+}
+
+/* Mobile Portrait Presentation Frame */
+.project-visual-mobile {
+  position: relative;
+  grid-column: 2;
+  margin-top: 12px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: radial-gradient(circle at center, #231930 0%, #11110f 100%);
+  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 24px 54px;
+}
+
+.project-visual-mobile img {
+  max-height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.project-visual-mobile figcaption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 12px 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(17, 17, 15, 0.88);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 0.61rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+}
+
 .project-featured {
   position: relative;
 }
@@ -902,12 +1175,27 @@ button {
     margin-bottom: 14px;
   }
 
-  .project-visual {
+  .project-visual,
+  .project-visual-mobile,
+  .project-slider {
     grid-column: 1 / -1;
     margin-top: 14px;
   }
 
-  .project-visual figcaption span:last-child {
+  .project-slider,
+  .project-visual-mobile {
+    aspect-ratio: 4 / 3;
+    min-height: 360px;
+  }
+
+  .slider-slide,
+  .project-visual-mobile {
+    padding: 16px 16px 46px;
+  }
+
+  .project-visual figcaption span:last-child,
+  .project-visual-mobile figcaption span:last-child,
+  .slider-caption span:last-child {
     display: none;
   }
 
