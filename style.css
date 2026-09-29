@@ -530,6 +530,14 @@ button {
   color: var(--text);
 }
 
+.install-note {
+  margin-top: 12px;
+  color: var(--faint);
+  font-family: var(--mono);
+  font-size: 0.64rem;
+  line-height: 1.45;
+}
+
 /* Project Slider */
 .project-slider {
   position: relative;

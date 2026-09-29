@@ -54,7 +54,7 @@
           </div>
           <div>
             <dt>Building</dt>
-            <dd>TabSplit &amp; AccessPilot</dd>
+            <dd>TabSplit, UnSub &amp; AccessPilot</dd>
           </div>
           <div>
             <dt>Focus</dt>
@@ -166,6 +166,73 @@
           <article class="project reveal">
             <div class="project-index">02</div>
             <div class="project-heading">
+              <p class="project-type">Privacy-First Chromium Extension</p>
+              <h2>UnSub</h2>
+            </div>
+            <div class="project-slider" data-slider="unsub" aria-label="UnSub extension application screenshots">
+              <div class="slider-track">
+                <div class="slider-slide active" data-caption="01 / Audit &amp; Track" data-sub="Local Inactivity Monitor">
+                  <img src="assets/projects/unsub/01-tracker.png" alt="UnSub extension dashboard showing active subscription tracking and monthly bleed calculation" width="497" height="627" loading="lazy" decoding="async">
+                </div>
+                <div class="slider-slide" data-caption="02 / 30-Day Alert" data-sub="Direct Cancellation Link">
+                  <img src="assets/projects/unsub/02-alert.png" alt="UnSub 30-day inactivity alert highlighting an unused subscription with direct cancellation button" width="496" height="622" loading="lazy" decoding="async">
+                </div>
+              </div>
+              <div class="slider-controls">
+                <button class="slider-btn slider-prev" type="button" aria-label="Previous screenshot">←</button>
+                <div class="slider-indicators">
+                  <button class="indicator active" type="button" aria-label="Slide 1"></button>
+                  <button class="indicator" type="button" aria-label="Slide 2"></button>
+                </div>
+                <button class="slider-btn slider-next" type="button" aria-label="Next screenshot">→</button>
+              </div>
+              <figcaption class="slider-caption">
+                <span class="caption-title">01 / Audit &amp; Track</span>
+                <span class="caption-sub">Local Inactivity Monitor</span>
+              </figcaption>
+            </div>
+            <div class="project-body">
+              <p class="project-summary">Stop paying for things you don't use. A privacy-first Chromium browser extension that tracks subscription-domain visits locally, detects when a service hasn't been visited in 30+ days, and surfaces direct cancellation links. Zero external servers, zero telemetry, and 100% on-device storage.</p>
+              <div class="project-notes">
+                <div>
+                  <h3>Engineering highlights</h3>
+                  <ul>
+                    <li>Local visit tracking via Chrome Tabs API without saving general browsing history</li>
+                    <li>30-day inactivity detection powered by Manifest V3 background alarms</li>
+                    <li>Direct account-management and cancellation links for zero-friction unsubscription</li>
+                    <li>Native local browser notifications alerting users before recurring renewals</li>
+                    <li>Zero-telemetry architecture — no remote backend, tracking, or data collection</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Architecture &amp; Stack</h3>
+                  <p>Client-side only. All subscription and visit logs reside exclusively in Chrome Local Storage.</p>
+                  <div class="tag-list" style="margin-top: 14px;">
+                    <span>React</span>
+                    <span>Vite</span>
+                    <span>JavaScript</span>
+                    <span>Manifest V3</span>
+                    <span>Chrome Storage API</span>
+                    <span>Chrome Tabs API</span>
+                    <span>Chrome Alarms API</span>
+                    <span>Chrome Notifications API</span>
+                    <span>Tailwind CSS</span>
+                  </div>
+                  <div class="project-actions">
+                    <a class="project-link project-link-primary" href="https://github.com/DagmTesfu/UnSub/releases/tag/v1.0.0" target="_blank" rel="noreferrer" title="Download v1.0.0 (Installed via Chrome Developer Mode)">Download v1.0.0 <i aria-hidden="true">↓</i></a>
+                    <a class="project-link" href="https://github.com/DagmTesfu/UnSub" target="_blank" rel="noreferrer">GitHub <i aria-hidden="true">↗</i></a>
+                    <a class="project-link" href="https://dagmtesfu.github.io/UnSub/PRIVACY" target="_blank" rel="noreferrer">Privacy Policy <i aria-hidden="true">↗</i></a>
+                    <span class="project-link pending" data-placeholder="true" aria-disabled="true" title="Currently submitted and under review for Microsoft Edge Add-ons">Edge Add-ons (In Review)</span>
+                  </div>
+                  <p class="install-note">Note: GitHub release requires Chrome Developer Mode (Load Unpacked). Edge Add-ons store release is currently in review.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-index">03</div>
+            <div class="project-heading">
               <p class="project-type">Developer tooling <span class="status-pill">Building</span></p>
               <h2>AccessPilot</h2>
             </div>
@@ -195,7 +262,7 @@
           </article>
 
           <article class="project reveal">
-            <div class="project-index">03</div>
+            <div class="project-index">04</div>
             <div class="project-heading">
               <p class="project-type">Client Project · Operations</p>
               <h2>Sales Operations &amp; Custom Lottery Platform</h2>
@@ -257,7 +324,7 @@
         <div><h2>Backend</h2><p>Node.js, Express.js, REST APIs</p></div>
         <div><h2>Data</h2><p>PostgreSQL, Supabase, SQL</p></div>
         <div><h2>AI</h2><p>OpenAI API, AI-assisted code analysis, AI code generation/patching</p></div>
-        <div><h2>Engineering</h2><p>Git, GitHub, Docker, WCAG 2.2, axe</p></div>
+        <div><h2>Engineering</h2><p>Git, GitHub, Docker, Manifest V3, Chrome Extension APIs, WCAG 2.2, axe</p></div>
         <div><h2>Deployment</h2><p>Vercel</p></div>
       </div>
     </section>
