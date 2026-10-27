@@ -366,6 +366,20 @@ button {
   font-weight: 500;
   letter-spacing: -0.055em;
   line-height: 1.04;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.project-title-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  object-fit: cover;
+  display: inline-block;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  vertical-align: middle;
 }
 
 .project-visual {
@@ -570,16 +584,114 @@ button {
   padding: 24px 24px 56px;
   opacity: 0;
   visibility: hidden;
-  transform: scale(0.96);
-  transition: opacity 300ms ease, transform 300ms ease, visibility 300ms;
+  transform: scale(0.96) translateY(8px);
+  transition: opacity 400ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 450ms cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 400ms;
   pointer-events: none;
 }
 
 .slider-slide.active {
   opacity: 1;
   visibility: visible;
-  transform: scale(1);
+  transform: scale(1) translateY(0);
   pointer-events: auto;
+}
+
+/* Realistic Smartphone Device Mockup Shell */
+.phone-mockup-wrapper {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  max-height: 100%;
+  padding: 8px 0;
+}
+
+.phone-mockup {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #0d0d0c;
+  border-radius: 42px;
+  padding: 10px;
+  box-shadow: 
+    0 0 0 2px #383733,
+    0 0 0 5px #1c1c18,
+    0 24px 50px -8px rgba(0, 0, 0, 0.8),
+    0 12px 24px -6px rgba(0, 0, 0, 0.6),
+    inset 0 0 0 1.5px rgba(255, 255, 255, 0.12);
+  height: 100%;
+  max-height: 100%;
+  aspect-ratio: 480 / 1024;
+  overflow: hidden;
+  transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 500ms ease;
+}
+
+.project-slider:hover .phone-mockup {
+  transform: translateY(-3px) scale(1.015);
+  box-shadow: 
+    0 0 0 2px #e46043,
+    0 0 0 5px #1c1c18,
+    0 32px 64px -8px rgba(0, 0, 0, 0.85),
+    0 16px 28px -6px rgba(228, 96, 67, 0.2),
+    inset 0 0 0 1.5px rgba(255, 255, 255, 0.16);
+}
+
+/* Light / Ceramic Phone Variant */
+.phone-mockup-light {
+  background: #f5f5f3;
+  box-shadow: 
+    0 0 0 2px #d4d2cc,
+    0 0 0 5px #eceae5,
+    0 24px 50px -8px rgba(0, 0, 0, 0.75),
+    0 12px 24px -6px rgba(0, 0, 0, 0.5),
+    inset 0 0 0 1.5px rgba(255, 255, 255, 0.8);
+}
+
+.project-slider:hover .phone-mockup-light {
+  box-shadow: 
+    0 0 0 2px #e46043,
+    0 0 0 5px #eceae5,
+    0 32px 64px -8px rgba(0, 0, 0, 0.85),
+    0 16px 28px -6px rgba(228, 96, 67, 0.25),
+    inset 0 0 0 1.5px rgba(255, 255, 255, 0.9);
+}
+
+/* Dynamic Island pill on phone */
+.phone-dynamic-island {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25%;
+  height: 14px;
+  background: #000000;
+  border-radius: 20px;
+  z-index: 10;
+  box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.15);
+  pointer-events: none;
+}
+
+.phone-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 34px;
+  overflow: hidden;
+  display: flex;
+  background: #060e0a;
+}
+
+.phone-screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 34px;
+  box-shadow: none !important;
 }
 
 .slider-slide img {
